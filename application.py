@@ -32,9 +32,6 @@ def receive():
         else:
             return req.text
 
-    else:
-        return '', 400
-
     if request.method == 'GET':
         return 'OK'
 
