@@ -32,7 +32,7 @@ def receive():
         else:
             return req.text
 
-    if request.method == 'GET':
+    else:
         return 'OK'
 
 if __name__ == '__main__':
