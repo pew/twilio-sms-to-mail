@@ -14,7 +14,7 @@ url = 'https://api.postmarkapp.com/email'
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST', 'GET'])
 def receive():
     if request.method == 'POST':
         msgFrom = request.form["From"]
@@ -34,6 +34,9 @@ def receive():
 
     else:
         return '', 400
+
+    if request.method == 'GET':
+        return 'OK'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
