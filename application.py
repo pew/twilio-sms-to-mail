@@ -28,7 +28,7 @@ def receive():
         req = requests.post(url, json=payload, headers=headers)
 
         if req.status_code == 200:
-            return 'thx', 200
+            return '', 200
         else:
             return req.text
 
